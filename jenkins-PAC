@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        stage("this is my first stage1") {
+            steps { 
+                script {
+                    echo "hey, I am stage1"
+                }
+            }
+        }
+        stage("this is my first stage2") {
+            steps { 
+                script {
+                    echo "hey, I am stage2"
+                }
+            }
+        }
+    }
+}
