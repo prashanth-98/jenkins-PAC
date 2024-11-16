@@ -4,7 +4,7 @@ pipeline {
         stage("this is my first stage1") {
             steps { 
                 script {
-	        var1=10
+	        var1= 10
                 println "this is my variable value: ${var1}"
 				}
 			}
