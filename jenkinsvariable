@@ -1,13 +1,27 @@
 pipeline {
     agent any
+	environment {
+  subject = "PAC"
+  batch = "2"
+}
+parameters {
+  choice choices: ['DEV', 'PROD', 'TEST', 'PRE-PROD'], description: 'select your environment from dropdown list', name: 'environment'
+}
+
     stages {
         stage("this is my first stage1") {
             steps { 
                 script {
-	        var1= 10
-                println "this is my variable value: ${var1}"
+				var1=10
+				println "this is my userdefined variable value: ${var1}"
+                println "this is my environment variable value: ${env.subject}"
+				println "this is my variable value: ${env.batch}"
+				println "this is my variable value: ${env.BRANCH_NAME}"
+				println "this is my variable value: ${env.BUILD_ID}"
+				println "this is my global variable value: ${currentBuild.result}"
+				println "here is your parameterized value : ${params.environment}"
 				}
 			}
 		}		
 	}
-}
+} 
