@@ -16,7 +16,7 @@ parameters {
 				println "this is my userdefined variable value: ${var1}"
                 println "this is my environment variable value: ${env.subject}"
 				println "this is my variable value: ${env.batch}"
-				println "this is my variable value: ${env.BRANCH_NAME}"
+				println "this is my variable value: ${env.JOB_NAME}"
 				println "this is my variable value: ${env.BUILD_ID}"
 				println "this is my global variable value: ${currentBuild.projectName}"
 				println "here is your parameterized value : ${params.environment}"
